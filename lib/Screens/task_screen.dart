@@ -35,22 +35,24 @@ class _TaskTrackerState extends State<TaskTracker> {
     builder: (context) {
       return AlertDialog(
         title: Text(isEditing ? 'Edit Task' : 'Add Task'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: taskNameController, 
-              decoration: InputDecoration(labelText: 'Task Name'),
-            ),
-            TextField(
-              controller: taskDescriptionController, 
-              decoration: InputDecoration(labelText: 'Description'),
-            ),
-            TextField(
-              controller: taskDueDateController, 
-              decoration: InputDecoration(labelText: 'Due Date (yyyy-mm-dd)'),
-            ),
-          ],
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: taskNameController, 
+                decoration: InputDecoration(labelText: 'Task Name'),
+              ),
+              TextField(
+                controller: taskDescriptionController, 
+                decoration: InputDecoration(labelText: 'Description'),
+              ),
+              TextField(
+                controller: taskDueDateController, 
+                decoration: InputDecoration(labelText: 'Due Date (yyyy-mm-dd)'),
+              ),
+            ],
+          ),
         ),
         actions: [
           TextButton(
